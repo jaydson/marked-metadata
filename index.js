@@ -3,7 +3,7 @@ var merked = require('marked'),
 
 var MarkedMetaData = function (file) {
 	
-	var mdFile = fs.readFileSync(file).toString(); 
+	var mdFile = fs.readFileSync(file).toString();
 
 	/* Return the markdown metadata */
 	this.metadata = function () {
