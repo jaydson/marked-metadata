@@ -1,5 +1,6 @@
 marked-metadata
 ================
+[![Build Status](https://travis-ci.org/jaydson/marked-metadata.svg?branch=master)](https://travis-ci.org/jaydson/marked-metadata)  
 
 Markdown parser (using marked) with metadata header support.
 
