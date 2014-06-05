@@ -4,7 +4,7 @@ var marked = require('marked'),
 var MarkedMetaData = function (file) {
 	
 	var mdFile = fs.readFileSync(file).toString(),
-		tokens = ['---','---']
+		tokens = ['---','---'],
 
 		/* Convert metadata header into JSON */
 		toJSON = function (data) {
