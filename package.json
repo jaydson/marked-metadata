@@ -1,6 +1,6 @@
 {
   "name": "marked-metadata",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Markdwon parser with metadata support",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
 	},
   "repository": {
     "type": "git",
-    "url": "git://github.com/es6rocks/marked-metadata.git"
+    "url": "git://github.com/jaydson/marked-metadata.git"
   },
   "keywords": [
     "markdown",
@@ -17,9 +17,9 @@
   "author": "Jaydson Gomes <jayalemao@gmail.com> (http://jaydson.org/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/es6rocks/marked-metadata/issues"
+    "url": "https://github.com/jaydson/marked-metadata/issues"
   },
-  "homepage": "https://github.com/es6rocks/marked-metadata",
+  "homepage": "https://github.com/jaydson/marked-metadata",
   "dependencies": {
     "marked": "^0.3.2"
   },
