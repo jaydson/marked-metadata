@@ -1,4 +1,4 @@
-md-header-parser
+marked-metadata
 ================
 
-Helper to parse markdown header
+Markdown parser (using marked) with metadata header support.
