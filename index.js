@@ -33,7 +33,7 @@ var MarkedMetaData = function (file) {
 				reg = new RegExp(strReg, 'g'),
 				content = data.replace(reg, "");
 
-			return content ? content : new Error("Can't get the content");			
+			return content ? marked(content) : new Error("Can't get the content");
 		};
 
 	/* Define the initial and last markdown header token */

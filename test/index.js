@@ -39,22 +39,22 @@ describe('#simple markdown stuff', function() {
 
 	it('#Getting parsed markdown;', function () {
 		md.defineTokens('<!--', '-->');
-		md.markdown().should.equal('\n#Hello');
+		md.markdown().should.equal('<h1 id="hello">Hello</h1>\n');
 	});
 
 	it('#Getting parsed markdown 1;', function () {
 		md1.defineTokens('---', '---');
-		md1.markdown().should.equal('\n#Hello 1');
+		md1.markdown().should.equal('<h1 id="hello-1">Hello 1</h1>\n');
 	});
 
 	it('#Getting parsed markdown cropped;', function () {
 		md2.defineTokens('<!--', '-->');
-		md2.markdown({ crop : '{{more}}'}).should.equal('\n#Hello 2\n');
+		md2.markdown({ crop : '{{more}}'}).should.equal('<h1 id="hello-2">Hello 2</h1>\n');
 	});
 
 	it('#Getting parsed markdown no-cropped;', function () {
 		md2.defineTokens('<!--', '-->');
-		md2.markdown().should.equal('\n#Hello 2\n{{more}}');
+		md2.markdown().should.equal('<h1 id="hello-2">Hello 2</h1>\n<p>{{more}}</p>\n');
 	});
 });
 
