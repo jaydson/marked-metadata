@@ -29,8 +29,8 @@ var MarkedMetaData = function (file) {
 
 		/* Extracts the content */
 		getMarkdownContent = function (data) {
-			var strReg = "^ *\\" + tokens[0] + "[^]*" + tokens[1] + "*",
-				reg = new RegExp(strReg, 'g'),
+			var strReg = "^ *?\\" + tokens[0] + "[^]*?" + tokens[1] + "*",
+				reg = new RegExp(strReg),
 				content = data.replace(reg, "");
 
 			return content ? marked(content) : new Error("Can't get the content");
