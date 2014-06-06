@@ -53,6 +53,13 @@ md.defineTokens('<!--', '-->');
 var content = md.markdown();
 ```
 
+You can crop a markdown file by a given identifier:
+```javascript
+var md2 = new MarkedMetaData('./test/test.md');
+md2.defineTokens('<!--', '-->');
+md2.markdown({ crop : '{{more}}'});
+```
+
 ## Contribute
 Fork > Pull-request
 

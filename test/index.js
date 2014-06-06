@@ -5,6 +5,7 @@ var should = require('chai').should(),
 describe('#simple markdown stuff', function() {
 	var md = new MarkedMetaData('./test/test.md');
 	var md1 = new MarkedMetaData('./test/test1.md');
+	var md2 = new MarkedMetaData('./test/test2.md');
 
 	it('get a markdown file;', function() {
 		md.getFile().should.equal('<!--\nlayout: post\ntitle: hello world\n-->\n#Hello');
@@ -44,6 +45,16 @@ describe('#simple markdown stuff', function() {
 	it('#Getting parsed markdown 1;', function () {
 		md1.defineTokens('---', '---');
 		md1.markdown().should.equal('\n#Hello 1');
+	});
+
+	it('#Getting parsed markdown cropped;', function () {
+		md2.defineTokens('<!--', '-->');
+		md2.markdown({ crop : '{{more}}'}).should.equal('\n#Hello 2\n');
+	});
+
+	it('#Getting parsed markdown no-cropped;', function () {
+		md2.defineTokens('<!--', '-->');
+		md2.markdown().should.equal('\n#Hello 2\n{{more}}');
 	});
 });
 

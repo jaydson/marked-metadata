@@ -64,9 +64,10 @@ var MarkedMetaData = function (file) {
 			return JSONData;
 	};
 
-	this.markdown = function () {
-		var file = getMarkdownContent(mdFile);
-		return file;
+	this.markdown = function (config) {
+		return config && config.crop ?
+			   getMarkdownContent(mdFile.split(config.crop)[0]):
+			   getMarkdownContent(mdFile);
 	};
 }
 
