@@ -12,7 +12,7 @@ var MarkedMetaData = function (file) {
 				lines = data.trim().split('\n');
 
 			lines.forEach(function(line, i) {
-				tmpObj[line.trim().split(':')[0]] = line.trim().split(':')[1];
+				tmpObj[line.trim().split(':')[0]] = line.trim().split(':')[1].trim();
 			});
 
 			return tmpObj;

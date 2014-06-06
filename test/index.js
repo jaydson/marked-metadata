@@ -26,13 +26,13 @@ describe('#simple markdown stuff', function() {
 	});
 
 	it('#Getting markdown metadata;', function () {
-		var obj = { layout: ' post', title: ' hello world' };
+		var obj = { layout: 'post', title: 'hello world' };
 		md.defineTokens('<!--', '-->');
 		expect(md.metadata()).to.deep.equal(obj);
 	});
 
 	it('#Getting markdown metadata 1;', function () {
-		var obj = { layout: ' post', title: ' hello world' };
+		var obj = { layout: 'post', title: 'hello world' };
 		md1.defineTokens('---', '---');
 		expect(md1.metadata()).to.deep.equal(obj);
 	});

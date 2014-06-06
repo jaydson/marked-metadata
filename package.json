@@ -1,6 +1,6 @@
 {
   "name": "marked-metadata",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Markdwon parser with metadata support",
   "main": "index.js",
   "scripts": {
