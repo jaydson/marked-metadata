@@ -6,6 +6,7 @@ describe('#simple markdown stuff', function() {
 	var md = new MarkedMetaData('./test/test.md');
 	var md1 = new MarkedMetaData('./test/test1.md');
 	var md2 = new MarkedMetaData('./test/test2.md');
+	var mdStr = new MarkedMetaData('<!--\nlayout: post\ntitle: hello world\n-->\n#Hello');
 
 	it('get a markdown file;', function() {
 		md.getFile().should.equal('<!--\nlayout: post\ntitle: hello world\n-->\n#Hello');
@@ -55,6 +56,20 @@ describe('#simple markdown stuff', function() {
 	it('#Getting parsed markdown no-cropped;', function () {
 		md2.defineTokens('<!--', '-->');
 		md2.markdown().should.equal('<h1 id="hello-2">Hello 2</h1>\n<p><!--more-->\nfoobar</p>\n');
+	});
+
+	it('get a string markdown', function() {
+		mdStr.getFile().should.equal('<!--\nlayout: post\ntitle: hello world\n-->\n#Hello');
+	});
+
+	it('#Gettings parsed string markdown', function() {
+		mdStr.markdown().should.equal('<p><!--\nlayout: post\ntitle: hello world\n--></p>\n<h1 id="hello">Hello</h1>\n');
+	});
+
+	it('#Gettings string markdown metadata', function() {
+		var obj = { layout: 'post', title: 'hello world' };
+		mdStr.defineTokens('<!--', '-->');
+		expect(mdStr.metadata()).to.deep.equal(obj);
 	});
 });
 
