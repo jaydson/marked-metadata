@@ -3,7 +3,11 @@ var marked = require('marked'),
 
 var MarkedMetaData = function (file) {
 	
-	var mdFile = fs.readFileSync(file).toString(),
+	if (typeof file != 'string') {
+		throw new Error('MarkedMetaData() expecting string parameter.');
+	}
+
+	var mdFile = fs.existsSync(file) ? fs.readFileSync(file).toString() : file,
 		tokens = ['---','---'],
 
 		/* Convert metadata header into JSON */
@@ -70,6 +74,6 @@ var MarkedMetaData = function (file) {
 			   getMarkdownContent(mdFile.split(config.crop)[0]):
 			   getMarkdownContent(mdFile);
 	};
-}
+};
 
 module.exports = MarkedMetaData;
